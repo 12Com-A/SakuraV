@@ -41,13 +41,17 @@ git clone https://github.com/12Com-A/SakuraV.git
 <img width="672" height="57" alt="image" src="https://github.com/user-attachments/assets/bf50738c-9373-49b3-8fc1-1712c6da24f7" />
 
 - 找到这两行代码 代码文件：SakuraClient.cpp
+
 ```Cpp
 inet_pton(AF_INET, "你的IP", &addr.sin_addr);
 ```
+
 - 将“你的IP”改成你的公网IP
+
 ```Cpp
 addr.sin_port = htons(8073);
 ```
+
 - 将“8073”改成你服务器监听的端口
 
 第四步：
