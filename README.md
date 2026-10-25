@@ -3,15 +3,6 @@
 # SakuraV 木马
 
 SakuraV 一款简易的远程木马
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
- 本篇README.md面向开发者
  
 ## 目录
 
