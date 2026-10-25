@@ -4,8 +4,6 @@
 
 SakuraV 一款简易的远程木马
 
-<!-- PROJECT SHIELDS -->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -20,7 +18,7 @@ SakuraV 一款简易的远程木马
 - [上手指南](#上手指南)
   - [开发前的配置要求](#开发前的配置要求)
   - [部署](#部署步骤)
-- [开发的架构](#开发的架构)
+- [原理](#原理)
 - [作者](#作者)
 
 ### 上手指南
@@ -63,6 +61,12 @@ addr.sin_port = htons(8073);
 
 - 构建即可
 
+### 原理
+
+- 将自己拷贝进入C:\\system目录并隐藏文件夹
+- 调用system函数将自己加入启动项
+- 循环连接服务器 每次停止五秒
+
 ### 作者
 
 Commkom 开发者
@@ -70,7 +74,7 @@ Email：commkom@qq.com
 
 ### 版权说明
 
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
+该项目签署了 GNU GENERAL PUBLIC LICENSE 3.0授权许可，详情请参阅 [LICENSE.txt](https://github.com/12Com-A/SakuraV/LICENSE.txt)
 
 
 
