@@ -67,7 +67,7 @@ Email：commkom@qq.com
 
 ### 版权说明
 
-该项目签署了 GNU GENERAL PUBLIC LICENSE 3.0授权许可，详情请参阅 [LICENSE.txt](https://github.com/12Com-A/SakuraV/LICENSE.txt)
+该项目签署了 GNU GENERAL PUBLIC LICENSE 3.0 授权许可，详情请参阅 [LICENSE.txt](https://github.com/12Com-A/SakuraV/LICENSE.txt)
 
 
 
