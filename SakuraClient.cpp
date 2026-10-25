@@ -25,8 +25,8 @@ void start_connect() {
 	// 准备连接信息
 	sockaddr_in addr = {};
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(8072);
-	inet_pton(AF_INET, "127.0.0.1", &addr.sin_addr);
+	addr.sin_port = htons(8073);
+	inet_pton(AF_INET, "控制IP", &addr.sin_addr);
 	int c = connect(sock, (sockaddr*)&addr, sizeof(addr));
 	if (c == SOCKET_ERROR) {
 		cout << WSAGetLastError();
